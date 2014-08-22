@@ -1,0 +1,6 @@
+= form_tag('#', method: :get, class: 'navbar-form navbar-right') do
+  -if @search_keyword.present?
+    = text_field_tag :search_keyword, @search_keyword, placeholder: 'Search', class: 'form-control'
+  -else
+    = text_field_tag :search_keyword, nil, placeholder: 'Search', class: 'form-control'
+  = button_tag 'Search', type: :submit, id: 'search_btn', class: 'btn btn-default btn-sm'
