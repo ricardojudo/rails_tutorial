@@ -6,6 +6,9 @@
 %p
   %b Last name:
   = @user.last_name
+%p
+  %b Avatar:
+  = image_tag @user.avatar_url
 = link_to 'Edit', edit_user_path(@user)
 \|
 = link_to 'Back', users_path
