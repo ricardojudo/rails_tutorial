@@ -45,3 +45,4 @@ gem 'font-awesome-sass'
 gem 'haml-rails'
 
 gem 'carrierwave'
+gem 'fog', '~> 1.3.1'
