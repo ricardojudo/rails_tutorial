@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :users
+  
+  resources :users do
+    resources :images, shallow: true#only: [:index, :new, :create]
+  end
+  
+  #resources :images, only: [:show, :edit, :update, :destroy]
 
   root to: 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,8 @@
+%p#notice= notice
+
+.thumbnail
+  = image_tag @image.reference_url
+
+= link_to 'Edit', edit_image_path(@image)
+\|
+= link_to 'Back', user_path(@image.user)

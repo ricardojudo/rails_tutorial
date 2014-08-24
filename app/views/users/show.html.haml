@@ -1,14 +1,27 @@
 %p#notice= notice
 
-%p
-  %b First name:
-  = @user.first_name
-%p
-  %b Last name:
-  = @user.last_name
-%p
-  %b Avatar:
-  = image_tag @user.avatar_url
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+.container
+  .personal_data.row
+    .col-md-3
+      = image_tag @user.avatar.thumb.url
+    .col-md-9
+      %p
+        %b First name:
+        = @user.first_name
+      %p
+        %b Last name:
+        = @user.last_name
+  
+  .gallery.row
+    %h1
+      Gallery
+    = link_to 'New Image', new_user_image_path(@user)
+    .row
+      - @user.images.each do |image| 
+        .col-md-2
+          = image_tag image.reference.thumb.url
+    
+  .row    
+    = link_to 'Edit', edit_user_path(@user)
+    \|
+    = link_to 'Back', users_path
